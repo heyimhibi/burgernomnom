@@ -3,9 +3,11 @@
 // Dependencies
 var express = require("express");
 var exphbs = require("express-handlebars");
+var mysql = require("mysql");
+var connection = require("./orm");
 
 // Create an instance of the express app.
-var expressApp = express();
+var app = express();
 
 
 // Set the port of our application
@@ -17,7 +19,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "Andr0meda13!",
     database: "burgernomnom_db"
   });
 

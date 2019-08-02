@@ -1,0 +1,12 @@
+{{!-- add new burger --}}
+
+<h2>Add a burger to eat</h2>
+<form id="updatemenu" class="button-size">
+  <select name="id">
+		{{#each burgers_table}}
+			<option value="{{this.burger_name}}">{{this.devoured}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="burger" placeholder="burger"></textarea>
+  <button type="submit">Add to menu!</button>
+</form>
