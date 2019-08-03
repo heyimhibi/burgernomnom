@@ -18,11 +18,11 @@ var burger = {
     console.log ("test-burger.js");
   },
   // The variables cols and vals are arrays.
-  // create: function(cols, vals, cb) {
-  //   orm.create("burger", cols, vals, function(res) {
-  //     cb(res);
-  //   });
-  // },
+  create: function(cols, vals, cb) {
+    orm.create("burger", cols, vals, function(res) {
+      cb(res);
+    });
+  },
   // update: function(objColVals, condition, cb) {
   //   orm.update("burger", objColVals, condition, function(res) {
   //     cb(res);
@@ -38,3 +38,5 @@ var burger = {
 
 // Makes the BurgernewBurger Model available for other files (will also create a table)
 module.exports = burger;
+
+// ideally I would've set up all the connections to be able to post, delete but I couldn't figure out how the ORM was supposed to work
