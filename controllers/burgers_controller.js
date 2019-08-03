@@ -1,21 +1,28 @@
 var express = require("express");
-var burgers = require("../models/burger.js");
 var router = express.Router();
+var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-    burgers.all(function(data) {
-      var hbsObject = {
-        burgernomnom_db: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
 
-  
- 
-  });
-  
+    burger.all(function(data) {
+        var hbsObject = {
+          burgers_table: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject); 
+        
+      });
+      
+      });
+    
+      console.log("test-controller");
+      
+    //   // 
+    //   res.render("index");
+    //   
+    // });
+    
   // Export routes for server.js to use.
   module.exports = router;
   
