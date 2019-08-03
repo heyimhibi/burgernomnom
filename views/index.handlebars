@@ -1,12 +1,32 @@
-{{!-- add new burger --}}
-
+add new burger
+<h1 class = "jumbotron"> Burgernomnom </h1>
 <h2>Add a burger to eat</h2>
-<form id="updatemenu" class="button-size">
-  <select name="id">
-		{{#each burgers_table}}
-			<option value="{{this.burger_name}}">{{this.devoured}}</option>
-		{{/each}}
-	</select>
-  <textarea type="text" name="burger" placeholder="burger"></textarea>
-  <button type="submit">Add to menu!</button>
+<h2> Burgers! </h2>
+<form class="create-form">
+
+	<div class="form-group">
+		<label for="burgerAddFunction"> Burger:</label>
+		<input type="text" id="burgerToBeAdded" name="name">
+		<button id="addBurgerButton" type="submit">Add to menu!</button>
+	</div>
+
 </form>
+
+
+
+<h2> Burger Menu</h2>
+
+<ul>
+  {{#each burgers_table}}
+  <li>
+    <p>
+      {{this.id}}. {{this.burger_name}}
+
+      <button data-burger_nameid="{{this.id}}" class="burger">Devour!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+<h2> Burgers Eaten</h2>
+
+
